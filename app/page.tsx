@@ -1,11 +1,12 @@
-import Navbar from "@/app/components/Navbar";
-import Hero from "@/app/components/Hero";
-import Stats from "@/app/components/Stats";
-import About from "@/app/components/About";
-import Operations from "@/app/components/Operations";
-import AgroProcess from "@/app/components/AgroProcess"; // Updated Import
-import Impact from "@/app/components/Impact";
-import Footer from "@/app/components/Footer";
+// app/page.tsx
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import Stats from "./components/Stats";
+import About from "./components/About";
+import Operations from "./components/Operations";
+import AgroProcess from "./components/AgroProcess";
+import Impact from "./components/Impact";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
