@@ -71,7 +71,7 @@ export default function Footer() {
             </div>
             <div>
               <p className="text-[10px] uppercase tracking-tighter text-gray-500">Call Support</p>
-              <p className="text-white font-bold">98172-60600</p>
+              <p className="text-white font-bold">9817260600</p>
             </div>
           </a>
 

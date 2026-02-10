@@ -31,8 +31,8 @@ export default function Navbar() {
     <>
       {/* 1. Top Bar - High Trust & Utility */}
       <div className="hidden md:flex justify-between items-center bg-khewra-primary text-white text-xs py-2 px-6 tracking-wide">
-        <div className="flex gap-6">
-          <span className="flex items-center gap-2">
+        <div className="flex gap-6 text-black">
+          <span className="flex items-center gap-2 ">
             <Phone size={14} className="text-khewra-accent" />
             98172-60600
           </span>
@@ -41,7 +41,7 @@ export default function Navbar() {
             care@fpokhewra.com
           </span>
         </div>
-        <div className="opacity-80">CIN - U01409HR2020PTC084969</div>
+        <div className="opacity-80 text-black">CIN - U01409HR2020PTC084969</div>
       </div>
 
       {/* 2. Main Navbar */}
