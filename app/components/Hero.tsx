@@ -1,9 +1,9 @@
 "use client";
 import { motion, Variants } from "framer-motion";
-import { ArrowRight, Phone, Leaf, ChevronDown } from "lucide-react";
+import { ArrowRight, Phone, Leaf } from "lucide-react";
+import Link from "next/link";
 
 export default function Hero() {
-  // Fix: Explicitly type these objects as 'Variants'
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
@@ -24,7 +24,7 @@ export default function Hero() {
   return (
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-fpo-dark">
       
-      {/* 1. Advanced Background Layer */}
+      {/* 1. Background Layer */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-fpo-dark/80 via-fpo-dark/40 to-fpo-dark/90 z-10" />
         <motion.img 
@@ -53,10 +53,17 @@ export default function Hero() {
             </span>
           </motion.div>
 
-          {/* Main Heading */}
+          {/* Main Heading with Moving Animation */}
           <motion.h1 variants={itemVariants} className="text-5xl md:text-8xl font-black text-white mb-8 tracking-tight leading-[0.95]">
             Khewra Farmers <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-fpo-accent to-fpo-light">
+            <span 
+              className="inline-block text-transparent bg-clip-text animate-text-shimmer"
+              style={{
+                backgroundImage: "linear-gradient(90deg, #bbf246 0%, #ffffff 50%, #bbf246 100%)",
+                backgroundSize: "200% auto",
+                WebkitBackgroundClip: "text",
+              }}
+            >
               Producer Co. Ltd.
             </span>
           </motion.h1>
@@ -75,47 +82,52 @@ export default function Hero() {
             A farmer-owned enterprise committed to transforming agriculture through modern input supply, sustainable agro-waste solutions, organised market linkages, and capacity building.
           </motion.p>
           
-          {/* Action Buttons */}
+          {/* Action Buttons - Reference from Navbar.tsx Links */}
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <motion.button 
-              whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(45,90,39,0.3)" }}
-              whileTap={{ scale: 0.98 }}
-              className="group relative px-10 py-5 bg-fpo-primary text-white font-bold rounded-xl overflow-hidden shadow-xl transition-all"
-            >
-              <span className="relative z-10 flex items-center gap-3">
-                Explore Our Services <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-              </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-            </motion.button>
+            
+            {/* Navigates to #services (Operations component) */}
+            <Link href="#services">
+              <motion.button 
+                whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(45,90,39,0.3)" }}
+                whileTap={{ scale: 0.98 }}
+                className="group relative px-10 py-5 bg-fpo-primary text-white font-bold rounded-xl overflow-hidden shadow-xl transition-all"
+              >
+                <span className="relative z-10 flex items-center gap-3">
+                  Explore Our Services <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+              </motion.button>
+            </Link>
 
-            <motion.button 
-              whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,1)", color: "#1a2e1a" }}
-              whileTap={{ scale: 0.98 }}
-              className="flex items-center gap-3 px-10 py-5 bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold rounded-xl transition-all"
-            >
-              <Phone size={20} /> Contact Us
-            </motion.button>
+            {/* Navigates to #contact */}
+            <Link href="#contact">
+              <motion.button 
+                whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,1)", color: "#1a2e1a" }}
+                whileTap={{ scale: 0.98 }}
+                className="flex items-center gap-3 px-10 py-5 bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold rounded-xl transition-all"
+              >
+                <Phone size={20} /> Contact Us
+              </motion.button>
+            </Link>
+
           </motion.div>
         </motion.div>
       </div>
 
-      {/* 3. Bottom Decorative Elements */}
-      <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 text-white/30"
-      >
-        <span className="text-[10px] uppercase tracking-[0.4em] font-bold">Scroll to Explore</span>
-        <motion.div 
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
-          <ChevronDown size={20} />
-        </motion.div>
-      </motion.div>
+      {/* Styles for smooth scrolling and shimmer animation */}
+      <style jsx global>{`
+        html {
+          scroll-behavior: smooth;
+        }
+        @keyframes textShimmer {
+          0% { background-position: 0% center; }
+          100% { background-position: -200% center; }
+        }
+        .animate-text-shimmer {
+          animation: textShimmer 3s linear infinite;
+        }
+      `}</style>
 
-      {/* Overlay Mesh Pattern */}
       <div className="absolute inset-0 z-10 opacity-[0.03] pointer-events-none bg-black" />
     </section>
   );
