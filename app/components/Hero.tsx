@@ -54,19 +54,23 @@ export default function Hero() {
           </motion.div>
 
           {/* Main Heading with Moving Animation */}
-          <motion.h1 variants={itemVariants} className="text-5xl md:text-8xl font-black text-white mb-8 tracking-tight leading-[0.95]">
-            Khewra Farmers <br />
-            <span 
-              className="inline-block text-transparent bg-clip-text animate-text-shimmer"
-              style={{
-                backgroundImage: "linear-gradient(90deg, #bbf246 0%, #ffffff 50%, #bbf246 100%)",
-                backgroundSize: "200% auto",
-                WebkitBackgroundClip: "text",
-              }}
-            >
-              Producer Co. Ltd.
-            </span>
-          </motion.h1>
+
+<motion.h1 
+  variants={itemVariants} 
+  className="text-5xl md:text-8xl font-medium text-white mb-8 tracking-tight leading-[0.95] font-[family-name:var(--font-playfair)]"
+>
+  Khewra Farmers <br />
+  <span 
+    className="inline-block text-transparent bg-clip-text animate-text-shimmer"
+    style={{
+      backgroundImage: "linear-gradient(90deg, #bbf246 0%, #ffffff 50%, #bbf246 100%)",
+      backgroundSize: "200% auto",
+      WebkitBackgroundClip: "text",
+    }}
+  >
+    Producer Co. Ltd.
+  </span>
+</motion.h1>
 
           {/* Tagline */}
           <motion.div variants={itemVariants} className="flex items-center justify-center gap-4 mb-8">
