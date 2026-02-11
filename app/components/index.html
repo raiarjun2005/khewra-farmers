@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Display The Date</h1>
+    <input type="text" id="dateDisplay" placeholder="Date" readonly>
+    <button onclick="showDate()">Click to see the Date</button>
+    <script>
+        function showDate(){
+            let today = new Date();
+            document.getElementById("dateDisplay").value = today.toDateString();
+        }
+    </script>
+</body>
+</html>
