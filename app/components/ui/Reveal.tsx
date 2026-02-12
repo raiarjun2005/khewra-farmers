@@ -6,11 +6,12 @@ interface Props {
   children: React.ReactNode;
   width?: "fit-content" | "100%";
   delay?: number;
+  className?: string; // Added to fix the TypeScript error
 }
 
-export const Reveal = ({ children, width = "100%", delay = 0.25 }: Props) => {
+export const Reveal = ({ children, width = "100%", delay = 0.25, className = "" }: Props) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true }); // Animate once
+  const isInView = useInView(ref, { once: true });
   const mainControls = useAnimation();
 
   useEffect(() => {
@@ -20,7 +21,7 @@ export const Reveal = ({ children, width = "100%", delay = 0.25 }: Props) => {
   }, [isInView, mainControls]);
 
   return (
-    <div ref={ref} style={{ position: "relative", width, overflow: "hidden" }}>
+    <div ref={ref} className={className} style={{ position: "relative", width, overflow: "hidden" }}>
       <motion.div
         variants={{
           hidden: { opacity: 0, y: 30 },
