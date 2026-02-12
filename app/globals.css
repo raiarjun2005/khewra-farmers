@@ -1,19 +1,21 @@
 @import "tailwindcss";
 
 @theme {
-  /* Mapping: Next.js variable ko Tailwind ke sans font se connect karein */
   --font-sans: var(--font-poppins), ui-sans-serif, system-ui;
 
-  /* Colors for Khewra FPO */
-  --color-fpo-primary: #2d5a27;
-  --color-fpo-dark: #1a2e1a;
-  --color-fpo-accent: #8db600;
-  --color-fpo-soil: #f4f1ea;
+  /* Logo-driven Color Palette */
+  --color-fpo-primary: #5ba42f;   /* Logo Green */
+  --color-fpo-yellow: #f8b133;    /* Logo Yellow */
+  --color-fpo-orange: #f37021;    /* Logo Orange */
+  --color-fpo-dark: #1a1a1a;      /* Logo "FPO" Black */
+  
+  /* Utilities for background/accents */
+  --color-fpo-accent: #f8b133;    /* Using Yellow as main accent */
+  --color-fpo-soil: #f9f7f2;      /* Light background */
 }
 
 @layer base {
   body {
-    /* Pure website par font force karne ke liye */
     font-family: var(--font-poppins), sans-serif;
     @apply bg-gray-50 text-gray-900;
   }

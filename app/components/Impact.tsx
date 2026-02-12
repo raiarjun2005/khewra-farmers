@@ -6,42 +6,46 @@ import {
   Zap, 
   Users, 
   CheckCircle2, 
-  Leaf,
-  ArrowRight
+  Leaf
 } from "lucide-react";
 
 export default function Impact() {
+  // Benefits array using Logo Colors (Green, Yellow, Orange)
   const benefits = [
     { 
       title: "Additional Income", 
       text: "Earn money from selling crop residues that earlier had no market value.",
-      icon: <TrendingUp className="text-fpo-accent" size={24} />,
-      color: "bg-emerald-500/10"
+      icon: <TrendingUp className="text-fpo-primary" size={24} />,
+      color: "bg-fpo-primary/10",
+      delay: 0.1
     },
     { 
       title: "Zero-Burning Approach", 
       text: "Eliminate stubble burning, reducing pollution and improving soil health.",
-      icon: <Wind className="text-blue-500" size={24} />,
-      color: "bg-blue-500/10"
+      icon: <Wind className="text-fpo-yellow" size={24} />,
+      color: "bg-fpo-yellow/10",
+      delay: 0.2
     },
     { 
       title: "Faster Field Clearing", 
       text: "Mechanised clearing in 24–48 hours enables timely sowing of next crop.",
-      icon: <Zap className="text-amber-500" size={24} />,
-      color: "bg-amber-500/10"
+      icon: <Zap className="text-fpo-orange" size={24} />,
+      color: "bg-fpo-orange/10",
+      delay: 0.3
     },
     { 
       title: "Reduced Labour Burden", 
       text: "Advanced machines complete work quickly, avoiding hectic manual handling.",
-      icon: <Users className="text-purple-500" size={24} />,
-      color: "bg-purple-500/10"
+      icon: <Users className="text-fpo-primary" size={24} />,
+      color: "bg-fpo-primary/10",
+      delay: 0.4
     },
   ];
 
   return (
     <section className="py-24 bg-white relative overflow-hidden">
-      {/* Background Decorative Element */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-fpo-soil/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+      {/* Background Decorative Gradient - Using Soil color from globals.css */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-fpo-soil rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 opacity-50" />
 
       <div className="container mx-auto px-6 relative z-10">
         
@@ -56,6 +60,7 @@ export default function Impact() {
             <Leaf size={14} className="text-fpo-primary" />
             <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-fpo-primary">Making a Difference</span>
           </motion.div>
+          
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -70,9 +75,9 @@ export default function Impact() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-12 gap-8 items-start">
+        <div className="grid lg:grid-cols-12 gap-8 items-stretch">
           
-          {/* Left: Benefits Cards (8 Columns on desktop) */}
+          {/* Left Side: 4 Benefit Cards */}
           <div className="lg:col-span-7 grid sm:grid-cols-2 gap-6">
             {benefits.map((item, i) => (
               <motion.div
@@ -80,7 +85,7 @@ export default function Impact() {
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
+                transition={{ delay: item.delay }}
                 whileHover={{ y: -5 }}
                 className="group p-8 rounded-3xl bg-gray-50 border border-gray-100 hover:bg-white hover:shadow-2xl hover:shadow-fpo-primary/10 transition-all duration-300"
               >
@@ -95,29 +100,29 @@ export default function Impact() {
             ))}
           </div>
 
-          {/* Right: Broader Impact Card (5 Columns on desktop) */}
+          {/* Right Side: Broader Impact Highlight Card */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="lg:col-span-5 h-full"
+            className="lg:col-span-5"
           >
-            <div className="bg-fpo-dark p-8 md:p-12 rounded-[2.5rem] shadow-2xl relative overflow-hidden h-full flex flex-col justify-center">
-              {/* Pattern Overlay */}
-              <div className="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#8db600_1px,transparent_1px)] [background-size:20px_20px]" />
+            <div className="bg-fpo-dark p-8 md:p-12 rounded-[2.5rem] shadow-2xl relative overflow-hidden h-full flex flex-col justify-center border border-white/5">
+              {/* Subtle Pattern using Yellow Accent */}
+              <div className="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(#f8b133_1px,transparent_1px)] [background-size:20px_20px]" />
               
               <h3 className="text-2xl md:text-3xl font-bold text-white mb-8 relative z-10 leading-tight">
                 Our Broader <br />
-                <span className="text-fpo-accent">Ecosystem Impact</span>
+                <span className="text-fpo-yellow">Ecosystem Impact</span>
               </h3>
               
-              <ul className="space-y-6 relative z-10">
+              <ul className="space-y-5 relative z-10">
                 {[
                   "Supporting farmers in reducing cost of cultivation",
                   "Creating new income streams through agro-waste",
-                  "Strengthening rural employment and entrepreneurship",
-                  "Supplying consistent-quality biomass to industries",
-                  "Ensuring stable demand for agri-produce"
+                  "Strengthening rural employment",
+                  "Supplying consistent-quality biomass",
+                  "Ensuring stable demand for produce"
                 ].map((impact, i) => (
                   <motion.li 
                     key={i} 
@@ -126,23 +131,24 @@ export default function Impact() {
                     transition={{ delay: 0.3 + (i * 0.1) }}
                     className="flex items-start gap-4 text-gray-300"
                   >
-                    <div className="mt-1 bg-fpo-accent/20 p-1 rounded-full">
-                      <CheckCircle2 size={16} className="text-fpo-accent" />
+                    <div className="mt-1 bg-fpo-yellow/20 p-1 rounded-full">
+                      <CheckCircle2 size={16} className="text-fpo-yellow" />
                     </div>
                     <span className="text-sm md:text-base font-medium leading-snug">{impact}</span>
                   </motion.li>
                 ))}
               </ul>
 
+              {/* Stats Footer in Logo Colors */}
               <div className="mt-12 pt-8 border-t border-white/10 relative z-10">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-fpo-accent text-2xl font-black">100%</p>
+                    <p className="text-fpo-primary text-2xl font-black">100%</p>
                     <p className="text-[10px] text-gray-500 uppercase tracking-widest">Farmer Satisfaction</p>
                   </div>
                   <div className="h-10 w-[1px] bg-white/10" />
                   <div>
-                    <p className="text-white text-2xl font-black">500+</p>
+                    <p className="text-fpo-orange text-2xl font-black">500+</p>
                     <p className="text-[10px] text-gray-500 uppercase tracking-widest">Lives Impacted</p>
                   </div>
                 </div>

@@ -7,11 +7,10 @@ import { Menu, X, Phone, Mail, Image as ImageIcon } from "lucide-react";
 
 const navLinks = [
   { name: "Home", href: "/" },
-  { name: "About Us", href: "/#about" }, 
-  { name: "Services", href: "/#services" }, 
-  { name: "Agro-Waste", href: "/#agro-waste" }, 
-  { name: "Gallery", href: "/gallery", isSpecial: true }, // Special property for styling
-  { name: "Contact", href: "/#contact" }, 
+  { name: "About Us", href: "/about" }, 
+  { name: "Services", href: "/services" }, 
+  { name: "Agro-Waste", href: "/agro-waste" }, 
+  { name: "Gallery", href: "/gallery", isSpecial: true },
 ];
 
 export default function Navbar() {
