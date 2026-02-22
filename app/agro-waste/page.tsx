@@ -6,7 +6,7 @@ export default function AgroWastePage() {
   return (
     <main className="min-h-screen bg-fpo-dark">
       <Navbar />
-      <div className="pt-32 pb-6 text-center text-white">
+      <div className="pt-32 pb-6 text-center text-amber-700">
         <h1 className="text-5xl font-bold">Agro-Waste Management</h1>
       </div>
       <AgroProcess />

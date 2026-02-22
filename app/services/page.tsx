@@ -7,7 +7,7 @@ export default function ServicesPage() {
     <main className="min-h-screen bg-fpo-dark">
       <Navbar />
       <div className="pt-32 pb-10 text-center">
-        <h1 className="text-white text-5xl font-bold">Our Services</h1>
+        <h1 className="text-amber-700 text-5xl font-bold">Our Services</h1>
       </div>
       <Operations />
       <Footer />
