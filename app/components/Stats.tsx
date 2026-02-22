@@ -38,12 +38,11 @@ export default function Stats() {
 {stats.map((stat, index) => (
   <Reveal key={index} delay={index * 0.1}>
     <div className="space-y-3 group">
-      <h3 className="text-5xl md:text-7xl font-black text-fpo-primary tracking-tighter">
+      <h3 className="text-5xl md:text-7xl font-black text-[#15803D] tracking-tighter">
         <Counter value={stat.value} />{stat.suffix}
       </h3>
-      {/* Orange bar matching logo */}
-      <div className="h-1.5 w-12 bg-fpo-orange mx-auto rounded-full group-hover:w-24 transition-all duration-500"></div>
-      <p className="text-fpo-dark font-bold uppercase tracking-[0.2em] text-xs">
+      <div className="h-1.5 w-12 bg-[#EA580C] mx-auto rounded-full group-hover:w-24 transition-all duration-500"></div>
+      <p className="text-[#0F172A] font-bold uppercase tracking-[0.2em] text-xs">
         {stat.label}
       </p>
     </div>

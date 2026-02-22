@@ -37,22 +37,20 @@ const operations = [
 
 export default function Operations() {
   return (
-    <section className="py-24 bg-fpo-dark" id="services">
+    <section className="py-24 bg-[#FDFBF7]" id="services">
       <div className="container mx-auto px-6">
         
-        {/* Header - Simple & Strong */}
         <Reveal>
           <div className="max-w-3xl mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-6">
-              Core <span className="text-fpo-accent">Operations</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-[#1A2E1A] tracking-tight mb-6">
+              Core <span className="text-[#2D5A27]">Operations</span>
             </h2>
-            <p className="text-gray-400 text-lg leading-relaxed">
+            <p className="text-[#4B5E4B] text-lg leading-relaxed">
               Sustainable and technology-driven services supporting the farming community.
             </p>
           </div>
         </Reveal>
 
-        {/* Layout Logic: Flexbox with Wrap to center the last 2 cards */}
         <div className="flex flex-wrap justify-center gap-6">
           {operations.map((op, idx) => (
             <div 
@@ -60,28 +58,25 @@ export default function Operations() {
               className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.33%-16px)] min-w-[300px] flex-grow-0"
             >
               <Reveal delay={idx * 0.1}>
-                <div className="group h-full bg-white/5 border border-white/10 p-8 rounded-2xl hover:bg-white/[0.08] hover:border-fpo-accent/50 transition-all duration-300">
+                <div className="group h-full bg-[#F4F1EA] border border-[#E5E0D8] shadow-sm p-8 rounded-2xl hover:bg-[#FDFBF7] hover:shadow-lg hover:border-[#2D5A27]/50 transition-all duration-300">
                   
-                  {/* Icon Header */}
                   <div className="flex items-start justify-between mb-8">
-                    <div className="w-12 h-12 rounded-xl bg-fpo-accent/10 border border-fpo-accent/20 flex items-center justify-center text-fpo-accent group-hover:bg-fpo-accent group-hover:text-fpo-dark transition-all duration-300">
+                    <div className="w-12 h-12 rounded-xl bg-[#FDFBF7] border border-[#E5E0D8] flex items-center justify-center text-[#2D5A27] group-hover:bg-[#2D5A27] group-hover:text-[#FDFBF7] transition-all duration-300">
                       {op.icon}
                     </div>
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-fpo-accent/60">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#5A735A] group-hover:text-[#2D5A27] transition-colors">
                       {op.loc}
                     </span>
                   </div>
 
-                  {/* Text Content */}
-                  <h3 className="text-xl font-bold text-white mb-3 tracking-tight">
+                  <h3 className="text-xl font-bold text-[#1A2E1A] mb-3 tracking-tight">
                     {op.title}
                   </h3>
-                  <p className="text-gray-400 text-sm leading-relaxed mb-6">
+                  <p className="text-[#4B5E4B] text-sm leading-relaxed mb-6">
                     {op.desc}
                   </p>
 
-                  {/* Simple Footer Link */}
-                  <div className="flex items-center gap-2 text-xs font-bold text-fpo-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="flex items-center gap-2 text-xs font-bold text-[#2D5A27] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     LEARN MORE <ChevronRight size={14} />
                   </div>
                 </div>

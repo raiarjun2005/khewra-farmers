@@ -5,20 +5,22 @@ const config: Config = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
       colors: {
-        // Custom FPO Earthy Palette
-        "fpo-primary": "#2d5a27", // Deep Forest Green
-        "fpo-dark": "#1a2e1a",    // Dark Moss
-        "fpo-accent": "#8db600",  // Apple Green
-        "fpo-soil": "#f4f1ea",    // Off-white/Cream
-        "fpo-light": "#e8f5e9",   // Pale Leaf
-        // Khewra Specifics
-        "khewra-primary": "#1b4332",
-        "khewra-dark": "#081c15",
-        "khewra-accent": "#52b788",
+        // Fresh Light Theme Palette
+        "fpo-primary": "#16a34a", // Green 600
+        "fpo-yellow": "#d97706",  // Amber 600
+        "fpo-orange": "#ea580c",  // Orange 600
+        "fpo-dark": "#0f172a",    // Slate 900 (For strong text if needed)
+        "fpo-soil": "#f8fafc",    // Slate 50 (Soft light background)
+        "fpo-accent": "#22c55e",  // Green 500
+        
+        "khewra-primary": "#15803D",
+        "khewra-dark": "#0F172A",
+        "khewra-accent": "#22C55E",
       },
       fontFamily: {
         sans: ["var(--font-poppins)"],

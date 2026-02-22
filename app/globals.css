@@ -3,15 +3,7 @@
 @theme {
   --font-sans: var(--font-poppins), ui-sans-serif, system-ui;
 
-  /* Logo-driven Color Palette */
-  --color-fpo-primary: #5ba42f;   /* Logo Green */
-  --color-fpo-yellow: #f8b133;    /* Logo Yellow */
-  --color-fpo-orange: #f37021;    /* Logo Orange */
-  --color-fpo-dark: #1a1a1a;      /* Logo "FPO" Black */
-  
-  /* Utilities for background/accents */
-  --color-fpo-accent: #f8b133;    /* Using Yellow as main accent */
-  --color-fpo-soil: #f9f7f2;      /* Light background */
+
 }
 
 @layer base {
